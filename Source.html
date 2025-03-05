@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày 8/3</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            text-align: center;
+            font-family: "Arial", sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 36px;
+            color: #ff4081;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .heart {
+            display: inline-block;
+            animation: blink 1.5s infinite alternate;
+        }
+        .poem {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .column {
+            width: 45%;
+            text-align: left;
+            font-size: 20px;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+        .poem .column:nth-child(1) { animation-delay: 1s; }
+        .poem .column:nth-child(2) { animation-delay: 2s; }
+        .poem .column:nth-child(3) { animation-delay: 3s; }
+        .poem .column:nth-child(4) { animation-delay: 4s; }
+        .final-lines {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+            animation-delay: 5s;
+        }
+        .rich {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff4081;
+            font-weight: bold;
+            animation: bounce 1.5s infinite alternate;
+        }
+        .heart-fall {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        .bear {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 150px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .flower {
+            position: fixed;
+            bottom: 20px;
+            left: 10px;
+            width: 100px;
+            animation: floatUp 2s infinite alternate ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
+        }
+        @keyframes fall {
+            from { transform: translateY(-10vh); opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="heart">💖</span> Chúc Mừng Ngày Quốc Tế Phụ Nữ 8/3 <span class="heart">💖</span></h1>
+
+    <div class="poem">
+        <div class="column">
+            <p>Hôm nay mùng Tám Tháng Ba, <br>
+               Đám nam lớp Toán thiệt là lạ ghê! <br>
+               Thường ngày tính toán say mê, <br>
+               Hôm nay bỗng hóa… thi nhân tặng quà!</p>
+        </div>
+        <div class="column">
+            <p>Chúc cho bạn nữ lớp ta <br>
+               Mỗi ngày xinh đẹp như là tiên nga. <br>
+               Bài tập cứ để ngày qua, <br>
+               Hôm nay cứ việc ăn quà, nhận hoa!</p>
+        </div>
+        <div class="column">
+            <p>Chúc bạn luôn cứ tươi xinh, <br>
+               Học hành tấn tới, nụ cười trên môi. <br>
+               Và mong năm tháng dần trôi, <br>
+               Deadline chẳng tới, suốt đời bình yên!</p>
+        </div>
+        <div class="column">
+            <p>Chúc cho hạnh phúc như thơ, <br>
+               Học hành thuận lợi, ước mơ vững vàng. <br>
+               Tiền tiêu chẳng lúc nào tan, <br>
+               Tình duyên như ý, ngập tràn yêu thương!</p>
+        </div>
+    </div>
+
+    <div class="final-lines">
+        <p>Ước gì năm tháng bình thường, <br>
+           Ngày nào cũng hóa Tám Ba thế này!</p>
+    </div>
+
+    <div class="rich">💰 Chúc các cậu mau giàu! 💰</div>
+
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVqODdncDNqdTNha2tlcHN6dmQydDlmcDZ4cmY5ZGl3YnF2bm12NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j31GvPjFaHgmZJgkn6/giphy.gif" class="bear" alt="Gấu bông">
+    <img src="https://media0.giphy.com/media/X5PsaxTP6U3h9dUSxd/200w.gif?cid=6c09b952o1ktv0lo7arl1maupt9hxkphmeudaxnahq6958pc&ep=v1_stickers_search&rid=200w.gif&ct=s" class="flower" alt="Bông hoa">
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart-fall");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
